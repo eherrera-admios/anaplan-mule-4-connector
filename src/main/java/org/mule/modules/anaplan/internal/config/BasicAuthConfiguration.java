@@ -13,7 +13,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Password;
 @Configuration(name = "basic-auth-config")
 @Operations(AnaplanOperations.class)
 @ConnectionProviders(AnaplanConnectionProvider.class)
-@DisplayName("Anaplan: Basic Authentication")
+@DisplayName("Basic Authentication Configuration")
 public class BasicAuthConfiguration extends AnaplanConfiguration {
 
     @Parameter
