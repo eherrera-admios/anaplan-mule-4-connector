@@ -13,6 +13,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Placement;
 @Configuration(name = "certificte-auth-anaplan-config")
 @Operations(AnaplanOperations.class)
 @ConnectionProviders(AnaplanConnectionProvider.class)
+@DisplayName("Anaplan: Certificate Authentication")
 public class CertificateAuthAnaplanConfiguration extends AnaplanConfiguration {
 
     @Parameter
