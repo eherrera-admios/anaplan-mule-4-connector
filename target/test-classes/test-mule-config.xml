@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:anaplan-anypoint="http://www.mulesoft.org/schema/mule/anaplan-anypoint"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/anaplan-anypoint http://www.mulesoft.org/schema/mule/anaplan-anypoint/current/mule-anaplan-anypoint.xsd">
+
+    <anaplan-anypoint:config name="config" configId="configId">
+        <anaplan-anypoint:connection requiredParameter="aValue" />
+    </anaplan-anypoint:config>
+
+    <flow name="sayHiFlow">
+        <anaplan-anypoint:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <anaplan-anypoint:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
