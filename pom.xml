@@ -8,7 +8,7 @@
     <artifactId>anaplan-connector</artifactId>
     <version>3.0.0</version>
     <packaging>mule-extension</packaging>
-    <name>Anaplan Anypoint Extension</name>
+    <name>Anaplan Extension</name>
 
     <parent>
         <groupId>org.mule.extensions</groupId>

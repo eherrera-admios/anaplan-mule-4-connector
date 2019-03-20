@@ -5,34 +5,42 @@ import org.mule.modules.anaplan.internal.connection.AnaplanConnectionProvider;
 import org.mule.runtime.extension.api.annotation.Configuration;
 import org.mule.runtime.extension.api.annotation.Operations;
 import org.mule.runtime.extension.api.annotation.connectivity.ConnectionProviders;
-import org.mule.runtime.extension.api.annotation.param.Optional;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 import org.mule.runtime.extension.api.annotation.param.display.Password;
 import org.mule.runtime.extension.api.annotation.param.display.Placement;
 
-@Configuration(name = "basic-auth-anaplan-config")
+@Configuration(name = "certificate-auth-config")
 @Operations(AnaplanOperations.class)
 @ConnectionProviders(AnaplanConnectionProvider.class)
-@DisplayName("Anaplan: Basic Authentication")
-public class BasicAuthAnaplanConfiguration extends AnaplanConfiguration {
+@DisplayName("Anaplan: Certificate Authentication")
+public class CertificateAuthConfiguration extends AnaplanConfiguration {
 
     @Parameter
-    @Optional
+    @DisplayName("Key Store Path")
     @Placement(tab = "Connection")
-    private String user;
+    private String keyStorePath;
 
     @Parameter
     @Password
-    @Optional
+    @DisplayName("Key Store Password")
     @Placement(tab = "Connection")
-    private String password;
+    private String keyStorePassword;
 
-    public String getUser() {
-        return user;
+    @Parameter
+    @DisplayName("Key Store Alias")
+    @Placement(tab = "Connection")
+    private String keyStoreAlias;
+
+    public String getKeyStorePath() {
+        return keyStorePath;
     }
 
-    public String getPassword() {
-        return password;
+    public String getKeyStorePassword() {
+        return keyStorePassword;
+    }
+
+    public String getKeyStoreAlias() {
+        return keyStoreAlias;
     }
 }
