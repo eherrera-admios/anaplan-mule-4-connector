@@ -9,7 +9,6 @@ import org.mule.runtime.extension.api.annotation.param.Optional;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 import org.mule.runtime.extension.api.annotation.param.display.Password;
-import org.mule.runtime.extension.api.annotation.param.display.Placement;
 
 @Configuration(name = "basic-auth-config")
 @Operations(AnaplanOperations.class)
@@ -19,13 +18,11 @@ public class BasicAuthConfiguration extends AnaplanConfiguration {
 
     @Parameter
     @Optional
-    @Placement(tab = "Connection")
     private String user;
 
     @Parameter
     @Password
     @Optional
-    @Placement(tab = "Connection")
     private String password;
 
     public String getUser() {

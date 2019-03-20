@@ -8,7 +8,6 @@ import org.mule.runtime.extension.api.annotation.connectivity.ConnectionProvider
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 import org.mule.runtime.extension.api.annotation.param.display.Password;
-import org.mule.runtime.extension.api.annotation.param.display.Placement;
 
 @Configuration(name = "certificate-auth-config")
 @Operations(AnaplanOperations.class)
@@ -18,18 +17,15 @@ public class CertificateAuthConfiguration extends AnaplanConfiguration {
 
     @Parameter
     @DisplayName("Key Store Path")
-    @Placement(tab = "Connection")
     private String keyStorePath;
 
     @Parameter
     @Password
     @DisplayName("Key Store Password")
-    @Placement(tab = "Connection")
     private String keyStorePassword;
 
     @Parameter
     @DisplayName("Key Store Alias")
-    @Placement(tab = "Connection")
     private String keyStoreAlias;
 
     public String getKeyStorePath() {
